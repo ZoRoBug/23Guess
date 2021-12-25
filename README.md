@@ -12,3 +12,4 @@ package-lock.json：Npm下载配置
 后期附上项目具体详情，部署流程 和 界面截图。
 
 ![image](https://github.com/ZoRoBug/23Guess/blob/main/screenshot/1.jpg)
+![image](https://github.com/ZoRoBug/23Guess/blob/main/screenshot/2.jpg)
