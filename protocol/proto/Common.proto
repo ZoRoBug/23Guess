@@ -1,0 +1,67 @@
+// 道具ID
+enum PropID 
+{ 
+   COIN = 1; // 游戏币
+}
+
+// 游戏平台
+enum Platform 
+{
+   MIN = 0; // 最小值-1
+   OFFICIAL = 1; // 官方
+   WX_MINIGAME = 2; // 微信小游戏
+   MAX = 3; // 最大值+1
+}
+
+// 游戏位置
+enum Location
+{
+   LOBBY = 1; // 大厅模块
+   IMPAWN = 2; // 押分模块
+}
+
+// 押分状态
+enum ImpawnState
+{
+   WAIT_START = 1; // 等待开始
+   STARTING = 2; // 开始进行中
+   WAIT_END = 3; // 等待结算
+   SETTLEMENT = 4; // 结算
+   PAUSE = 5; // 暂停
+}
+
+// 排行榜类型
+enum RankType
+{
+   UNIVERSE_CROWN = 1; // 宇宙皇冠榜
+   YESTERDAY_WINNER = 2; // 昨日吃鸡榜
+}
+
+// 奖励类型
+enum AwardType 
+{ 
+   STATIC_AD = 1; // 静态广告
+   ANIMATE_AD = 2; // 动态广告
+   SHARE_GAME = 3; // 分享游戏
+}
+
+// 道具结构
+message Prop
+{ 
+   optional PropID   id = 1; // 道具ID
+   optional int64    count = 2; // 道具数量
+}
+
+// 玩家信息
+message PlayerInfo 
+{ 
+   optional uint32   pid = 1; // 玩家ID
+   optional string   account = 2; // 账号
+   optional string   password = 3; // 密码
+   optional string   head = 4; // 头像地址
+   optional string   nickname = 5; // 昵称
+   optional Platform platform = 6; // 平台
+   optional uint32   level = 7; // 等级
+   optional sint64   winLoss = 8; // 输赢总额
+   optional uint64   coinSum = 9; // 所玩游戏币总额
+}

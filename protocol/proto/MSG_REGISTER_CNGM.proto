@@ -1,0 +1,6 @@
+message MSG_REGISTER_CNGM
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   connID = 2; // 链接服务器ID
+   optional bool     success = 3; // 注册是否成功
+}

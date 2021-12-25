@@ -1,0 +1,30 @@
+message MSG_IMPAWN_GAMEINFO_IMCL
+{
+   message Impawn
+   {
+      optional bool     isTwo = 1; // 押2？
+      optional uint64   coinSum = 2; // 押分金额
+      optional string   nickname = 3; // 玩家昵称
+   }
+   required uint32      msgID = 1; // 消息ID
+   optional uint32      pid = 2; // 玩家ID（=0则广播）
+   optional uint64      twoImpawnTotal = 3; // 押2总量
+   optional uint64      threeImpawnTotal = 4; // 押3总量
+   optional uint32      twoPlayerCount = 5; // 押2人数
+   optional uint32      threePlayerCount = 6; // 押3人数
+   optional uint32      twoAwardRate = 7; // 2奖励倍率（>=100，使用需除以100）
+   optional uint32      threeAwardRate = 8; // 3奖励倍率（>=100，使用需除以100）
+
+   optional uint32      playerTwoImpawnTimes = 9; // 玩家押2次数（pid>0有效）
+   optional uint32      playerThreeImpawnTimes = 10; // 玩家押3次数（pid>0有效）
+   optional uint64      playerTwoImpawnTotal = 11; // 玩家押2总量（pid>0有效）
+   optional uint64      playerThreeImpawnTotal = 12; // 玩家押3总量（pid>0有效）
+   repeated Impawn      impawnList = 13; // 押分靠前列表（pid>0有效）
+
+   repeated bool        recordList = 14; // 游戏结果列表（pid>0有效）
+   optional uint32      twoWinRecord = 15; // 2胜次数记录（pid>0有效）
+   optional uint32      threeWinRecord = 16; // 3胜次数记录（pid>0有效）
+
+   optional uint32      restartHour = 17; // 几点重新开始（pid>0有效）
+   optional uint32      pauseHour = 18; // 几点暂停游戏（pid>0有效）
+}

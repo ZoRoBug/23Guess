@@ -1,0 +1,13 @@
+message MSG_IMPAWN_LOGIN_CNCL
+{
+   enum Result
+   { 
+      UNKNOW = 0; // 未知
+      SUCCESS = 1; // 登录成功
+      OFFLINE = 2; // 登录失败，押分已离线
+      NO_CLIENT = 3; // 登录失败，未找到链接信息
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   pid = 2; // 玩家ID
+   optional Result   result = 3; // 登录结果
+}

@@ -1,0 +1,11 @@
+message MSG_KICK_LBCL
+{ 
+   enum Reason
+   { 
+      UNKNOW = 0; // 未知
+      OTHER_LOGIN = 1; // 其他人登录
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   pid = 2; // 踢出玩家ID
+   optional Reason   reason = 3; // 踢出原因
+}

@@ -1,0 +1,4 @@
+message MSG_PING
+{ 
+   required uint32   msgID = 1; // 消息ID
+}

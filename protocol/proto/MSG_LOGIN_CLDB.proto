@@ -1,0 +1,15 @@
+import "Common.proto";
+
+message MSG_LOGIN_CLDB
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional string   account = 2; // 账号
+   optional string   nickname = 3; // 昵称
+   optional string   password = 4; // 密码
+   optional Platform platform = 5; // 平台
+   optional string   ticket = 6; // 票据
+   optional string   head = 7; // 头像地址
+   optional string   wxCode = 8; // 微信平台登录有效
+   optional string   wxSessionKey = 9; // 微信会话密钥（客户端无需关心）
+   optional uint64   loginID = 10; // 登录ID（客户端无需关心）
+}

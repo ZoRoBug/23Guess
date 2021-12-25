@@ -1,0 +1,42 @@
+import "Common.proto";
+
+message MSG_LOGIN_DBCL 
+{ 
+   enum Result
+   { 
+      UNKNOW = 0; // 未知
+      SUCCESS = 1; // 成功（数据库返回）
+      ACCOUNT_NOEXIST = 2; // 账号不存在（数据库返回）
+      PASSWORD_ERROR = 3; // 密码错误（数据库返回）
+      PARAM_ERROR = 4; // 参数有误（数据库返回）
+      ACCOUNT_FROZEN = 5; // 账户冻结（数据库返回，暂未使用）
+      REDIS_GET_ERROR = 6; // redis错误
+      MARIADB_QUERY_ERROR = 7; // mariadb错误
+      LOBBY_NO_CONNECT = 8; // 游戏大厅未链接
+      TICKET_ERROR = 9; // 票据错误
+      OVER_PLAYER = 10; // 已超最大人数
+      ADD_PLAYER_ERROR = 11; // 添加玩家失败
+      ALREADY_LOGIN = 12; // 此账号已经登录
+      WX_UNKNOW_ERROR = 20; // 微信未知错误
+      WX_SYSTEM_BUSY = 21; // 微信返回系统繁忙
+      WX_CODE_INVALID = 22; // 微信返回CODE无效
+      WX_LOGIN_TOOMUCH = 23; // 微信返回登录频繁
+      WX_URL_GET_ERROR = 24; // 链接不上微信服务器
+      WX_PARSE_FAIL = 25; // 微信返回数据解析失败
+      WX_DATA_ERROR = 26; // 微信返回数据有误
+      UNKNOW1 = 100; // 未知错误1
+      UNKNOW2 = 101; // 未知错误2
+      UNKNOW3 = 102; // 未知错误3
+      UNKNOW4 = 103; // 未知错误4
+      UNKNOW5 = 104; // 未知错误5
+      UNKNOW6 = 105; // 未知错误6
+      UNKNOW7 = 106; // 未知错误7
+      UNKNOW8 = 107; // 未知错误8
+   }
+   required uint32      msgID = 1; // 消息ID
+   optional Result      result = 2; // 登录结果
+   optional PlayerInfo  pi = 3; // 玩家信息（登录成功有效）
+   repeated Prop        propList = 4; // 道具列表（登录成功有效）
+   optional string      wxSessionKey = 5; // 微信会话密钥（客户端无需关心）
+   optional uint64      loginID = 6; // 登录ID（客户端无需关心）
+}

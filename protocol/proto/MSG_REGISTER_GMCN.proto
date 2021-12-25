@@ -1,0 +1,7 @@
+message MSG_REGISTER_GMCN
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   connID = 2; // 链接服务器ID
+   optional uint32   id = 3; // 功能模块ID
+   optional string   name = 4; // 功能模块名称
+}

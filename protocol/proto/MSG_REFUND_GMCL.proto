@@ -1,0 +1,9 @@
+import "Common.proto";
+
+message MSG_REFUND_GMCL
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   pid = 2; // 玩家ID
+   optional Location type = 3; // 游戏类型
+   optional uint64   coin = 4; // 退还游戏币
+}

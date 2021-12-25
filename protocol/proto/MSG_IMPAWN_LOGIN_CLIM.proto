@@ -1,0 +1,5 @@
+message MSG_IMPAWN_LOGIN_CLIM
+{
+   required uint32  msgID = 1; // 消息ID
+   optional uint32  pid = 2; // 玩家ID（客户端不用传）
+}

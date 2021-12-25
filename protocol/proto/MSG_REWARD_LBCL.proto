@@ -1,0 +1,21 @@
+import "Common.proto";
+
+message MSG_REWARD_LBCL
+{ 
+   enum Result
+   { 
+      UNKNOW = 0; // 未知
+      SUCCESS = 1; // 成功
+      OFFLINE = 2; // 服务器已离线
+      NO_CLIENT = 3; // 无客户端信息
+      REDIS_ERROR = 4; // 数据库错误
+      PLAYER_OFFLINE = 5; // 玩家不在线
+      OVER_TIMES = 6; // 超出领奖次数
+      ON_IMPAWN = 7; // 押分无法领奖
+   }
+   required uint32      msgID = 1; // 消息ID
+   optional uint32      pid = 2; // 玩家ID（客户端不用传）
+   optional AwardType   awardType = 3; // 奖励类型
+   optional uint64      coin = 4; // 奖励金额（成功有效）
+   optional Result      result = 5; // 结果
+}

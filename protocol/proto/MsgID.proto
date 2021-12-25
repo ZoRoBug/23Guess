@@ -1,0 +1,4 @@
+message MsgID 
+{ 
+   required uint32   msgID = 1; // 消息ID，所有通信消息协议第一个字段必须是消息ID
+}

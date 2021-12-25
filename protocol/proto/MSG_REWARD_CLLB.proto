@@ -1,0 +1,8 @@
+import "Common.proto";
+
+message MSG_REWARD_CLLB
+{ 
+   required uint32      msgID = 1; // 消息ID
+   optional uint32      pid = 2; // 玩家ID（客户端不用传）
+   optional AwardType   awardType = 3; // 奖励类型
+}

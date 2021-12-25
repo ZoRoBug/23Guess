@@ -1,0 +1,5 @@
+message MSG_REGISTER_GTCN 
+{ 
+   required uint32   msgID = 1; // 消息ID 
+   optional bool     success = 2; // 注册是否成功
+}

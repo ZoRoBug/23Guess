@@ -1,0 +1,5 @@
+message MSG_TICKET_GTCN 
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional string   ticket = 2; // 登录票据
+}

@@ -1,0 +1,8 @@
+message MSG_REPORT_CNGT 
+{ 
+   required uint32   msgID = 1; // 消息ID 
+   optional uint32   id = 2; // 链接服务器ID
+   optional uint32   nowPlayer = 3; // 当前在线人数
+   optional uint32   maxPlayer = 4; // 最大在线人数限制
+   optional uint32   overPlayer = 5; // 极限在线人数限制
+}

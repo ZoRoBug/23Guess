@@ -1,0 +1,17 @@
+import "Common.proto";
+
+message MSG_RANK_CLDB 
+{ 
+   message Rank
+   {
+      optional uint32   pid = 1; // 玩家PID
+      optional uint32   level = 2; // 玩家等级
+      optional sint64   coinWin = 3; // 玩家获胜金额
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   pid = 2; // 玩家PID
+   optional RankType rankType = 3; // 排行榜类型
+   optional uint32   startPos = 4; // 起始点位置
+   optional uint32   count = 5; // 获取条目数量
+   repeated Rank     rankList = 6; // 排行榜列表（客户端无需关心）
+}

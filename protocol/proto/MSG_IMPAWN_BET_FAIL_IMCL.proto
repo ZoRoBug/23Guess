@@ -1,0 +1,20 @@
+message MSG_IMPAWN_BET_FAIL_IMCL
+{
+   enum Reason
+   {
+      UNKNOW = 0; // 未知
+      OFFLINE = 1; // 押分已离线
+      NO_CLIENT = 2; // 链接不存在
+      NO_LOGIN = 3; // 未登录押分
+      PARAM_ERROR = 4; // 押分参数错误
+      REDIS_ERROR = 5; // Redis出错
+      LACK_COIN = 6; // 游戏币不足
+      REDIS_FAIL = 7; // Redis失败
+      NO_STARTING = 8; // 押分未开始
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   pid = 2; // 玩家ID
+   optional bool     isTwo = 3; // 是否投2
+   optional uint64   coinSum = 4; // 押分金额
+   optional Reason   reason = 5; // 失败原因
+}

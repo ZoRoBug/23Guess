@@ -1,0 +1,8 @@
+message MSG_IMPAWN_SETTLEMENT_IMCL
+{
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   pid = 2; // 玩家ID
+   optional bool     isTwo = 3; // 是否押2
+   optional uint64   coinSum = 4; // 押分金额
+   optional int64    gainCoin = 5; // 获得金额（=0代表损失，>0代表获胜，=押分金额负数代表无效返还）
+}

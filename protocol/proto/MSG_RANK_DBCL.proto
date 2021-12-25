@@ -1,0 +1,17 @@
+import "Common.proto";
+
+message MSG_RANK_DBCL 
+{ 
+   message Rank
+   {
+      optional uint32   pid = 1; // 玩家PID
+      optional uint32   level = 2; // 玩家等级
+      optional sint64   coinWin = 3; // 玩家获胜金额
+      optional string   nickname = 4; // 玩家昵称
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   pid = 2; // 玩家PID
+   optional uint32   selfRank = 3; // 自己排位
+   optional RankType rankType = 4; // 排行榜类型
+   repeated Rank     rankList = 5; // 排行榜列表
+}

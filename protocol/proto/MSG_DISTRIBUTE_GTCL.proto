@@ -1,0 +1,15 @@
+message MSG_DISTRIBUTE_GTCL 
+{ 
+   enum Result
+   { 
+      UNKNOW = 0; // 未知
+      SUCCESS = 1; // 成功
+      NO_SERVER = 2; // 无链接服务器分配
+      FULL_PLAYER = 3; // 所有链接服务器人数已满
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional Result   result = 2; // 结果
+   optional string   address = 3; // 服务器地址（成功有效）
+   optional string   ticket = 4; // 登录票据（成功有效）
+   optional string   explain = 5; // 说明（无服务器分配有效）
+}
